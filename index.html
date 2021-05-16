@@ -1,16 +1,39 @@
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Comfortaa:wght@300;400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
 <div id="app" @click="click" :style="{backgroundColor}">
-  <span
-    class="alphabet"
-    v-html="alphabetUp"
-    :data-shadow-text="alphabetUp"
-    :style="{ 'text-shadow': `0.04em 0.04em 0 ${backgroundColor}`}"
-  ></span>
-  <span
-    class="alphabet"
-    v-html="alphabetLow"
-    :data-shadow-text="alphabetLow"
-    :style="{ 'text-shadow': `0.04em 0.04em 0 ${backgroundColor}`}"
-  ></span>
+  <div class="alphabet-container">
+    <div class="print">
+      <span
+        class="alphabet"
+        v-html="alphabetUp"
+        :data-shadow-text="alphabetUp"
+        :style="{ 'text-shadow': `0.04em 0.04em 0 ${backgroundColor}`}"
+      ></span>
+      <span
+        class="alphabet"
+        v-html="alphabetLow"
+        :data-shadow-text="alphabetLow"
+        :style="{ 'text-shadow': `0.04em 0.04em 0 ${backgroundColor}`}"
+      ></span>
+    </div>
+    <div class="hand-write">
+      <span
+        class="alphabet"
+        v-html="alphabetUp"
+        :data-shadow-text="alphabetUp"
+        :style="{ 'text-shadow': `0.04em 0.04em 0 ${backgroundColor}`}"
+      ></span>
+      <span
+        class="alphabet"
+        v-html="alphabetLow"
+        :data-shadow-text="alphabetLow"
+        :style="{ 'text-shadow': `0.04em 0.04em 0 ${backgroundColor}`}"
+      ></span>
+    </div>
+  </div>
   <span
     class="tip"
     @click.stop="toggleRandom"
@@ -21,6 +44,7 @@
     <span v-html="alphabetUp"></span>
     <span v-html="alphabetLow"></span>
   </div>
+  <span class="decoration">Никаких компромиссов</span>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script type="module" src="./alphabet-pure.js"></script>
@@ -40,6 +64,7 @@
   html,
   body,
   #app {
+    font-family: 'Comfortaa', cursive;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -62,7 +87,7 @@
     display: inline-block;
     position: relative;
     letter-spacing: 0.1em;
-    padding: 0.2em 0 0.25em 0;
+    /* padding: 0.2em 0 0.25em 0; */
   }
 
   .alphabet {
@@ -70,7 +95,26 @@
     z-index: 100;
     text-shadow: 0.04em 0.04em 0;
   }
-
+  .alphabet-container .hand-write {
+    font-family: 'Caveat', cursive;
+    transition: all 0.2s;
+  }
+  /* .alphabet-container {
+    overflow: hidden;
+    transition: all 0.2s;
+  }
+  .alphabet-container .hand-write {
+    font-family: 'Caveat', cursive;
+    transition: all 0.2s;
+  }
+  .alphabet-container:hover .print span{
+    transition: all 0.2s;
+    height: 0;
+  }
+  .print {
+    position: relative;
+    transition: all 0.2s;
+  } */
   .alphabet:after {
     content: attr(data-shadow-text);
     color: rgba(0, 0, 0, 0.35);
@@ -92,11 +136,15 @@
   }
   .background {
     position: absolute;
-    bottom: 50%;
+    bottom: 42%;
     right: 50%;
     color: #fff;
     opacity: 0.1;
     transform: translate(-50%, -50%) scale(60);
     z-index: 1;
+  }
+  .decoration {
+    font-family: 'Caveat', cursive;
+    font-size: 30px;
   }
 </style>
