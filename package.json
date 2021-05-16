@@ -1,0 +1,22 @@
+{
+  "name": "russian-alphabet",
+  "version": "1.0.0",
+  "description": "something about russian alphabet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laputaz/rrrussian-alphabet.git"
+  },
+  "keywords": [
+    "alphabet"
+  ],
+  "author": "river",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laputaz/rrrussian-alphabet/issues"
+  },
+  "homepage": "https://github.com/laputaz/rrrussian-alphabet#readme"
+}
