@@ -1,6 +1,6 @@
 ## Random Cyrillic alphabet (Russia)
 
-### what's this for
+### What's this for
 
 Случайная чудесная кириллица
 
